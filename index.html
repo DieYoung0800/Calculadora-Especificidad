@@ -1,0 +1,51 @@
+<!DOCTYPE html> <html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Especificidad</title>
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="icon" type="image/svg+xml" href="img/calculator-icon.svg">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Calculadora de Especificidad</h1>
+        <p>Calcula el peso de tus selectores CSS</p>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <div class="input-group">
+                <label for="selector-input">Ingresa tu selector CSS:</label>
+                <input type="text" id="selector-input" placeholder="Ejemplo: #nav .item > a" autocomplete="off">
+            </div>
+           <div id="important-alert" class="danger-zone hidden">
+    ☢️ ¡CUIDADO! Estás usando !important. Esto anula toda especificidad.
+</div>
+
+<div class="boxes-container">
+    <div class="specificity-box id-box">
+        <span class="label">Ids</span>
+        <span id="score-a" class="value">0</span>
+    </div>
+
+    <div class="specificity-box class-box">
+        <span class="label">Clases</span>
+        <span id="score-b" class="value">0</span>
+    </div>
+
+    <div class="specificity-box element-box">
+        <span class="label">Elementos</span>
+        <span id="score-c" class="value">0</span>
+    </div>
+</div>
+
+<div id="full-score" class="total-result">
+    Especificidad: 0, 0, 0
+</div>
+
+<p id="human-message"></p>
+</section>
+    </main>
+</body>
+</html>

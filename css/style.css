@@ -1,0 +1,205 @@
+/* =========================================
+   1. CONFIGURACIÓN GENERAL Y FONDO AURORA
+   ========================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* FONDO ANIMADO "AURORA TECH" */
+    background: linear-gradient(-45deg, #1a1a2e, #95a9e1, #224a7b, #2c0525);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; 
+    
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    
+   
+    transition: background 0.5s ease;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+p {
+    opacity: 0.9;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   2. INPUT (ENTRADA DE DATOS)
+   ========================================= */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+input[type="text"] {
+    padding: 15px;
+    font-size: 1.3rem;
+    width: 90%;
+    max-width: 500px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    transition: transform 0.2s;
+}
+
+input[type="text"]:focus {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+/* =========================================
+   3. ALERTA DE !IMPORTANT (ZONA DE PELIGRO)
+   ========================================= */
+.danger-zone {
+    background-color: #ffd700; 
+    color: #000;
+    font-weight: 800;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    border: 3px solid #000;
+    text-transform: uppercase;
+    animation: pulse 1s infinite;
+}
+
+.hidden { display: none; }
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* =========================================
+   4. CONTENEDOR DE CAJAS (LAYOUT HORIZONTAL)
+   ========================================= */
+
+.boxes-container {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center; 
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap; 
+}
+
+/* =========================================
+   5. DISEÑO DE LAS CAJAS (TARJETAS)
+   ========================================= */
+.specificity-box {
+    background: white;
+    border: 4px solid #ccc;
+    border-radius: 20px;
+    padding: 20px;
+    width: 110px;     
+    min-width: 110px;
+    
+    color: #333;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.value {
+    display: block;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #2c3e50;
+    line-height: 1;
+}
+
+/* ESTADOS ACTIVOS (COLORES) */
+.id-box.active {
+    border-color: #ff4757;
+    background-color: #fff0f1;
+    transform: translateY(-10px);
+}
+
+.class-box.active {
+    border-color: #3742fa;
+    background-color: #f0f1ff;
+    transform: translateY(-10px);
+}
+
+.element-box.active {
+    border-color: #2ed573;
+    background-color: #f0fff4;
+    transform: translateY(-10px);
+}
+
+/* =========================================
+   6. RESULTADO FINAL Y MENSAJE (CENTRADO ABAJO)
+   ========================================= */
+.total-result {
+    margin-top: 40px; 
+    margin-bottom: 20px;
+    
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.4); 
+    backdrop-filter: blur(5px);
+    padding: 15px 30px;
+    border-radius: 50px;
+    
+    display: inline-block; 
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+#human-message {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    color: #ffeb3b; 
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+    min-height: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* =========================================
+   7. MODO PÁNICO (SOBRESCRIBE EL FONDO)
+   ========================================= */
+body.panic-mode {
+    background: #580000 !important; 
+    animation: none;
+}
